@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title> First page of JavaScript</title>
+ </head>
+<body>
+
+<h2>Painter entry by Sailaja Lakkakula</h2>
+
+<form>
+    <label for="password">The hidden painter name </label>
+    <input type ="password" id="password" value="Monet"> <br>
+
+    <label for="guesspainter">Guess the painter </label>
+    <input type ="text" id="guesspainter"> <br>
+
+    <input type="button" onclick="checkPainter()" value="Get the values from form">check the guess
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+let good=0;
+let oops=0;
+
+function checkPainter (){
+
+    hiddenpainter = document.getElementById("password").value
+    guesspainter = document.getElementById("guesspainter").value
+   
+ if(hiddenpainter==guesspainter){
+    good +=1;
+    alert("you got it right");
+   document.getElementById("result").innerHTML=good;
+ } else {
+    oops +=1;
+    alert("Soory");
+    document.getElementById("result").innerHTML=oops;
+
+}
+    
+}
+</script>
+
+</body>
+</html> 
