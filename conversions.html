@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>JavaScript Looping page</title>
+ </head>
+<body>
+<h2>Sailaja Lakkakula shows currency conversions</h2>
+
+<form>
+    <label for="firstValue">Enter base amount </label>
+    <input type="number" id="firstValue" value="50"> <br>
+
+    <label for="secondValue">Enter the conversion rate</label>
+    <input type="number" id="secondValue" value="35"> 
+
+    <input type="button" onclick="convert()" value="Show conversions">
+
+</form>
+<p id="result">This text will be replaced </p>
+<script> 
+
+function convert ()
+{
+    lak = document.getElementById("firstValue").value
+    conversionrate = document.getElementById("secondValue").value
+    ts = ""
+    for (i = 1; i <= 5; i++)
+    {
+    ts = lakk + " is " + Math.round(conversionrate * lakk * 100) / 100 + "; " +
+    lakk * 2 + " is " + Math.round(conversionrate * lakk * 2 * 100) / 100 + "; " +
+    lakk * 4 + " is " + Math.round(conversionrate * lakk * 4 * 100) / 100 + "; " +
+    lakk * 8 + " is " + Math.round(conversionrate * lakk * 8 * 100) / 100 + "; " +
+    lakk * 16 + " is " + Math.round(conversionrate * lakk * 16 * 100) / 100 + "; "
+    }
+    out = document.getElementById("result")
+    if (ts) 
+    {
+    out.innerHTML = "Conversions are: " + ts
+           
+   }
+    
+}
+</script>
+<form>
+        <label>
+            <input type="radio" name="operation" value="mean" > Average
+        </label>
+        <label>
+            <input type="radio" name="operation" value="maximum" > Max
+        </label>
+        <label>
+            <input type="radio" name="operation" value="minimum" > Min
+        </label>
+</form>
+<input type="button" value="Values from the radio group" onclick="chooseOp()">
+<p id="result1">This text will be replaced</p>
+
+ <script>
+ 
+ function chooseOp()
+    {
+      const base = parseFloat(document.getElementById("firstValue").value);
+      const conversion = parseFloat(document.getElementById("secondValue").value);
+      const operation = document.querySelector('input[name="operation"]:checked').value;
+           
+        out=document.getElementById("result1")
+        let result1;
+        switch (operation) {
+        case "mean":
+                    result1 = (base + conversion) / 2;
+                    out.innerHTML = "Average of " + base + " and " + conversion + " is " + result1
+                    break;
+        case "maximum":
+                    if (base > conversion)
+                        result1 = base
+                    else
+                        result1 = conversion
+
+        out.innerHTML = "Max of " + base + " and " + conversion + " is " + result1
+                 break;
+        case "minimum": 
+                   
+        if (base < conversion)
+                        result1 = base
+                    else
+                        result1 = conversion
+
+                    out.innerHTML = "Min of " + base + " and " + conversion + " is " + result1
+                    break;
+         default:
+                    result1 = "";
+        
+        }
+
+            document.getElementById("result1").innerHTML = `${operation} of ${base} and ${conversion} is ${result1}`;
+        } 
+
+ </script> 
+</body>
+</html> 
