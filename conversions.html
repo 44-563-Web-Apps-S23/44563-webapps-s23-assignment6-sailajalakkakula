@@ -2,6 +2,12 @@
 <html>
  <head>
     <title>JavaScript Looping page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" 
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" 
+    integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
  </head>
 <body>
 <h2>Sailaja Lakkakula shows currency conversions</h2>
@@ -26,20 +32,23 @@ function convert ()
     ts = ""
     for (i = 1; i <= 5; i++)
     {
-    ts = lakk + " is " + Math.round(conversionrate * lakk * 100) / 100 + "; " +
-    lakk * 2 + " is " + Math.round(conversionrate * lakk * 2 * 100) / 100 + "; " +
-    lakk * 4 + " is " + Math.round(conversionrate * lakk * 4 * 100) / 100 + "; " +
-    lakk * 8 + " is " + Math.round(conversionrate * lakk * 8 * 100) / 100 + "; " +
-    lakk * 16 + " is " + Math.round(conversionrate * lakk * 16 * 100) / 100 + "; "
+        ba = document.getElementById("firstValue").value
+            conversionrate = document.getElementById("secondValue").value
+            ts = ""
+            for (i = 1; i <= 5; i++) {
+                ts = ba + " is " + Math.round(conversionrate * ba * 100) / 100 + "; " +
+                    ba * 2 + " is " + Math.round(conversionrate * ba * 2 * 100) / 100 + "; " +
+                    ba * 4 + " is " + Math.round(conversionrate * ba * 4 * 100) / 100 + "; " +
+                    ba * 8 + " is " + Math.round(conversionrate * ba * 8 * 100) / 100 + "; " +
+                    ba * 16 + " is " + Math.round(conversionrate * ba * 16 * 100) / 100 + "; "
+            }
+            out = document.getElementById("result")
+            if (ts) 
+            {
+                out.innerHTML = "Conversions are: " + ts
+            }
+        }
     }
-    out = document.getElementById("result")
-    if (ts) 
-    {
-    out.innerHTML = "Conversions are: " + ts
-           
-   }
-    
-}
 </script>
 <form>
         <label>
