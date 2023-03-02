@@ -17,7 +17,7 @@
     <input type ="password" id="password" value="Monet"> <br>
     <label for="guesspainter">Guess the painter </label>
     <input type ="text" id="guesspainter"> <br>
-    <input type="button" onclick="checkPainter()" value="Get the values from form">check the guess
+    <input type="button" class="btn btn-success"  onclick="checkPainter()" value="Get the values from form">check the guess
 </form>
 <p id="result">This text will be replaced </p>
 
@@ -75,6 +75,10 @@ function checkPainter ()
 
       }
    }
+    function giveAlert()
+    {
+      alert("Sorry, ran out of guesses.");
+    }
 
 </script>
 
